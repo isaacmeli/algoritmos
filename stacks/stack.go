@@ -1,6 +1,6 @@
 package stacks
 
-type Stack struct{ queue []int }
+type Stack struct{ itens []int }
 
 func (stack *Stack) empty() bool {
 	if stack.len() == 0 {
@@ -11,15 +11,15 @@ func (stack *Stack) empty() bool {
 }
 
 func (stack *Stack) len() int {
-	return len(stack.queue)
+	return len(stack.itens)
 }
 
 func (stack *Stack) Push(item int) {
-	stack.queue = append(stack.queue, item)
+	stack.itens = append(stack.itens, item)
 }
 
 func (stack *Stack) Pop() {
 	if !stack.empty() {
-		stack.queue = stack.queue[:stack.len()-1]
+		stack.itens = stack.itens[:stack.len()-1]
 	}
 }
